@@ -15,5 +15,5 @@ Yew-Router: Efficiently handles client-side routing and page transitions.
 Gloo-Net: Provides simple and effective means to make HTTP requests to the backend API.
 Gloo-Storage: Allows seamless client-side data storage and caching for improved performance and user experience.
 
-## Conclusio
+## Conclusion
 Together, these technologies provide a fast, secure, and scalable solution for building modern, full-stack Rust applications.
