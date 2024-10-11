@@ -1,0 +1,26 @@
+services:
+  postgres:
+    image: postgres:latest
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=123456789
+      - POSTGRES_DB=advance_blog_db
+    command: [ "postgres", "-c", "log_statement=all" ]
+
+  redis:
+    image: redis:latest
+
+  app:
+    build: .
+    environment:
+      - DATABASE_URL=postgres://postgres:123456789@postgres/advance_blog_db
+      - |
+        ROCKET_DATABASES={
+          my_pg_db_name={url=postgres://postgres:123456789@postgres/advance_blog_db},
+          redis_name_uri={url=redis://redis:6379}
+        }
+
+    ports:
+      - 8000:8000
+    volumes:
+      - ./:/app/

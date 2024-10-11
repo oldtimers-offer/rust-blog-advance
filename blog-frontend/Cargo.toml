@@ -1,0 +1,19 @@
+[package]
+name = "rust_login_api"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+yew = { version = "0.21", features = ["csr"] }
+yew-router = "0.18.0"
+web-sys = { version = "0.3.7", features = [
+    "HtmlInputElement",
+    "HtmlTextAreaElement",
+    "HtmlSelectElement",
+] }
+gloo-console = "0.3"
+gloo-net = "0.6"
+gloo-storage = "0.3.0"
+serde = "1.0"
+serde_json = "1.0"
+chrono = { version = "0.4.38", features = ["serde"] }

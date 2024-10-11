@@ -1,0 +1,6 @@
+- trunk serve
+- rustup target add wasm32-unknown-unknown
+- cargo install --locked trunk
+- cargo run
+- cargo run --target wasm32-unknown-unknown
+- trunk serve

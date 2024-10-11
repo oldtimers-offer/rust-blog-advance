@@ -1,0 +1,43 @@
+curl -X POST http://127.0.0.1:8000/register -H "Content-Type: application/json" -d '{"username": "mica", "password": "tixi"}'
+
+curl -X POST http://127.0.0.1:8000/login -H "Content-Type: application/json" -d '{"username": "mica", "password": "tixi"}'
+
+curl -X GET http://127.0.0.1:8000/protected -H 'Authorization: Bearer my_value'
+
+curl -X GET http://127.0.0.1:8000/protected -H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyIiwiZXhwIjoxNzI4Mzc3NjI1fQ.WFMQSrFFO_G_YVbMVXyuN1Nv5b7LsP-QX6akz_cAPjs'
+
+curl -X POST http://127.0.0.1:8000/post -H "Content-Type: application/json" -d '{"post_title": "Post Title", "post_description": "Post Description", "post_photo": "https://storage.googleapis.com/rust_blog/public/sm.jpg"}' -H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNzI4NDY5MzM0fQ.H2-_6londJuHMak3_jhEYPQLFEUfp7WfHXj_u2IgsAY'
+
+
+
+
+
+docker-compose up -d
+
+docker-compose ps
+
+docker-compose logs -f app
+
+docker-compose logs postgres
+
+docker-compose exec app diesel setup
+
+docker-compose exec app diesel migration
+
+docker-compose exec app diesel migration list
+
+docker-compose exec app diesel migration generate create_users
+
+docker-compose exec app diesel migration generate create_blog
+
+docker-compose exec app diesel migration list
+
+docker-compose exec app diesel migration run
+
+docker-compose exec app diesel migration list
+
+docker-compose exec app diesel migration revert
+
+docker-compose exec app diesel migration run
+
+docker-compose exec app cargo run

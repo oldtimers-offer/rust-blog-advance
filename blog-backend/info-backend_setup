@@ -1,0 +1,5 @@
+- docker-compose ps
+- docker inspect "name"                 blog-backend-app-1 
+- copy of "IP Address"                    "172.18.0.4"
+- docker-compose exec app bash
+- ROCKET_ADDRESS="IP Address" cargo run     ROCKET_ADDRESS=172.18.0.4 cargo run 
